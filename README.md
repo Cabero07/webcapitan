@@ -1,4 +1,4 @@
-<p align="center"> <a href="https://github.com/yiisoft" target="_blank"> <img src="https://avatars0.githubusercontent.com/u/993323" height="100px"> </a> <h1 align="center">Plantilla Básica del Proyecto Yii 2</h1> <br> </p>
+<p align="center"> <a href="https://github.com/yiisoft" target="_blank"> <img src="https://avatars0.githubusercontent.com/u/993323" height="100px"> </a> <h1 align="center">Sistema de gestion de estudiantes y profesores en Yii2</h1> <br> </p>
 
 ESTRUCTURA DE DIRECTORIOS
 -------------------
@@ -26,6 +26,12 @@ INSTALACIÓN
 ### Instalación vía Composer
 
 Si no tienes [Composer](https://getcomposer.org/), puedes instalarlo siguiendo las instrucciones en [getcomposer.org](https://getcomposer.org/doc/00-intro.md#installation-nix).
+
+Actualiza las dependencias del sistema utilizando Composer:
+
+    ```
+    composer update  
+    ```
 
 CONFIGURACIÓN
 -------------
@@ -83,7 +89,7 @@ To execute acceptance tests do the following:
     composer update  
     ```
 
-4. Descarga [Selenium Server](https://www.seleniumhq.org/download/)e inicialo:
+4. Descarga [Selenium Server](https://www.seleniumhq.org/download/) e inicialo:
 
     ```
     java -jar ~/selenium-server-standalone-x.xx.x.jar
