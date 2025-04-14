@@ -15,7 +15,7 @@ $this->title = 'Inicio';
           </svg>
 
           <h2>Representacion de datos</h2>
-          <p>Mantiene la calidad del centro escolar gracias a la innovacion y facil manejo de la informacion</p>
+          <p>Mantiene la calidad del centro escolar gracias a la innovación y fácil manejo de la información</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
@@ -24,7 +24,7 @@ $this->title = 'Inicio';
           </svg>
 
           <h2>Accesible</h2>
-          <p>Disponible y facil de usar para los que requieran de estos datos de manera segura sin interrupciones.</p>
+          <p>Disponible y fácil de usar para los que requieran de estos datos de manera segura sin interrupciones.</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false">
