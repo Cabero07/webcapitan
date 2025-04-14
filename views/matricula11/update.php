@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /** @var yii\web\View $this */
 /** @var app\models\TblMatriculaEstudiantil11grado $model */
 
-$this->title = 'Update Tbl Matricula Estudiantil11grado: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Tbl Matricula Estudiantil11grados', 'url' => ['index']];
+$this->title = 'Actualizar Matrícula Estudiantíl 11no: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Matrícula Estudiantil 11no', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = 'actualizar';
 ?>
 <div class="tbl-matricula-estudiantil11grado-update">
 
