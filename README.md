@@ -1,14 +1,6 @@
 <p align="center"> <a href="https://github.com/yiisoft" target="_blank"> <img src="https://avatars0.githubusercontent.com/u/993323" height="100px"> </a> <h1 align="center">Plantilla Básica del Proyecto Yii 2</h1> <br> </p>
 
-La Plantilla Básica del Proyecto Yii 2 es una aplicación esqueleto Yii 2 ideal para la creación rápida de proyectos pequeños.
-
-La plantilla incluye funciones básicas como inicio/cierre de sesión de usuario y una página de contacto. También contiene configuraciones comúnmente usadas que te permiten centrarte en agregar nuevas funcionalidades a tu aplicación.
-
-[![Latest Stable Version](https://img.shields.io/packagist/v/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![Total Downloads](https://img.shields.io/packagist/dt/yiisoft/yii2-app-basic.svg)](https://packagist.org/packages/yiisoft/yii2-app-basic)
-[![build](https://github.com/yiisoft/yii2-app-basic/workflows/build/badge.svg)](https://github.com/yiisoft/yii2-app-basic/actions?query=workflow%3Abuild)
-
-DIRECTORY STRUCTURE
+ESTRUCTURA DE DIRECTORIOS
 -------------------
 
       assets/             contiene definiciones de recursos
@@ -35,11 +27,11 @@ INSTALACIÓN
 
 Si no tienes [Composer](https://getcomposer.org/), puedes instalarlo siguiendo las instrucciones en [getcomposer.org](https://getcomposer.org/doc/00-intro.md#installation-nix).
 
-
 CONFIGURACIÓN
 -------------
 
 ### Base de Datos
+
 Edita el archivo `config/db.php` con datos reales. Por ejemplo:
 
 ```php
@@ -96,6 +88,7 @@ To execute acceptance tests do the following:
     ```
     java -jar ~/selenium-server-standalone-x.xx.x.jar
     ```
+
     Si utilizas Selenium Server 3.0 con Firefox (desde la versión 48) o Google Chrome (desde la versión 53), debes descargar [GeckoDriver](https://github.com/mozilla/geckodriver/releases) o [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads). Lanza Selenium de esta manera:
 
     ```
