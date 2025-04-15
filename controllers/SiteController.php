@@ -89,7 +89,10 @@ class SiteController extends Controller
             'totalProfesores' => $totalProfesores,
         ]);
     }
-
+    public function actionSecurity()
+    {
+        return $this->render('security');
+    }
     public function actionContact()
     {
         return $this->render('contact');

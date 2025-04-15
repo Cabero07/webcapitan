@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 ?>
-<div class="d-flex justify-content-center align-items-center vh-100" ">
+<div class="d-flex justify-content-center align-items-center">
     <div class="card shadow-lg" style="width: 360px; border-radius: 10px; overflow: hidden;">
         <div class="card-header text-center" style="background-color: #007bff; color: white;">
             <h4 class="mb-0">Bienvenido</h4>
