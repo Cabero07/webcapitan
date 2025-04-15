@@ -7,8 +7,8 @@ use yii\helpers\Url;
 <aside class="main-sidebar sidebar-dark-warning elevation-4" style="z-index: 1040 !important;">
     <!-- Logo de la aplicación -->
     <a href="<?= Url::home() ?>" class="brand-link logo-switch">
-        <img src="/basic/web/logo-mini.png" alt="Logo" class="brand-image-xl logo-xs">
-        <img src="/basic/web/logo.png" alt="Logo" class="brand-image-xs logo-xl" style="left: 12px">
+        <img src="/webcapitan/web/logo-mini.png" alt="Logo" class="brand-image-xl logo-xs">
+        <img src="/webcapitan/web/logo.png" alt="Logo" class="brand-image-xs logo-xl" style="left: 12px">
         </br>
     </a>
 
