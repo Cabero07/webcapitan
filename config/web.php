@@ -20,9 +20,9 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User', // Modelo de usuario
-            'enableAutoLogin' => true,           // Habilita el inicio de sesión automático
-            'loginUrl' => ['site/login'],        // URL de inicio de sesión
+            'identityClass' => 'app\models\User',
+            'enableAutoLogin' => true,
+            'loginUrl' => ['site/login'], // URL de login para usuarios no autenticados
         ],
 
         'errorHandler' => [
@@ -61,7 +61,12 @@ $config = [
         'rules' => [
             [
                 'allow' => true,
-                'roles' => ['@'], // Solo usuarios autenticados
+                'actions' => ['login', 'error'], // Excluye estas acciones de la autenticación
+                'roles' => ['?'], // Solo usuarios invitados (no autenticados)
+            ],
+            [
+                'allow' => true,
+                'roles' => ['@'], // Solo usuarios autenticados tienen acceso al resto
             ],
         ],
     ],

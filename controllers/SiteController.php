@@ -15,25 +15,18 @@ class SiteController extends Controller
     {
         return [
             'access' => [
-                'class' => AccessControl::class,
-                'only' => ['logout', 'dashboard', 'contact', 'profesores'], // Acciones protegidas
+                'class' => \yii\filters\AccessControl::class,
+                'only' => ['logout', 'dashboard', 'contact', 'profesores'], // Define las acciones a proteger
                 'rules' => [
                     [
-                        'actions' => ['logout', 'dashboard', 'contact', 'profesores'],
                         'allow' => true,
-                        'roles' => ['@'], // Solo usuarios autenticados
+                        'actions' => ['login', 'error'], // Excluye estas acciones del requisito de autenticación
+                        'roles' => ['?'], // Solo usuarios no autenticados
                     ],
                     [
-                        'actions' => ['login', 'error'],
                         'allow' => true,
-                        'roles' => ['?'], // Solo usuarios invitados (no autenticados)
+                        'roles' => ['@'], // Solo usuarios autenticados pueden acceder a las demás acciones
                     ],
-                ],
-            ],
-            'verbs' => [
-                'class' => VerbFilter::class,
-                'actions' => [
-                    'logout' => ['post'],
                 ],
             ],
         ];
