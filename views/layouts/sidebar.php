@@ -135,17 +135,21 @@ use yii\helpers\Url;
 
                 <!------- MENU DEVS ------->
                 <?php
+                /*
                 // Activar el menú Devs si el controlador es "gii" o "debug"
                 $liDevs = in_array($controller, ['gii', 'debug']) ? 'nav-item has-treeview active menu-open' : 'nav-item has-treeview';
                 $aDevs = in_array($controller, ['gii', 'debug']) ? 'nav-link active' : 'nav-link';
+                */
                 ?>
-                <li class="<?= $liDevs ?>">
+                <?php /*<li class="<?= $liDevs ?>">
                     <a class="<?= $aDevs ?>" href="#">
                         <i class="nav-icon fas fa-file-code"></i>
                         <p>Devs <i class="right fas fa-angle-left"></i></p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <?php
+                    */
+                    ?>
+                        <?php /*
                         // Submenú "Gii"
                         $liGii = ($controller == 'gii') ? 'nav-item active' : 'nav-item';
                         $aGii = ($controller == 'gii') ? 'nav-link active' : 'nav-link';
@@ -153,7 +157,9 @@ use yii\helpers\Url;
                         // Submenú "Debug"
                         $liDebug = ($controller == 'debug') ? 'nav-item active' : 'nav-item';
                         $aDebug = ($controller == 'debug') ? 'nav-link active' : 'nav-link';
+                        */
                         ?>
+                        <?php /*
                         <li class="<?= $liGii ?>">
                             <a class="<?= $aGii ?>" href="<?= Url::toRoute(['/gii']); ?>" target="_blank">
                                 <i class="nav-icon far fa-circle text-danger"></i>
@@ -166,6 +172,8 @@ use yii\helpers\Url;
                                 <p>Debug</p>
                             </a>
                         </li>
+                        */
+                        ?>
                     </ul>
                 </li>
             </ul>
