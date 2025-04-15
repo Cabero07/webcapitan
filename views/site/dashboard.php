@@ -3,7 +3,7 @@
         <div class="small-box bg-info">
             <div class="inner">
                 <h3><?= $total10 ?></h3>
-                <p>Estudiantes de Décimo</p>
+                <p>Estudiantes de 10.°</p>
             </div>
             <div class="icon">
                 <i class="fas fa-user-graduate"></i>
@@ -14,7 +14,7 @@
         <div class="small-box bg-success">
             <div class="inner">
                 <h3><?= $total11 ?></h3>
-                <p>Estudiantes de Undécimo</p>
+                <p>Estudiantes de 11.°</p>
             </div>
             <div class="icon">
                 <i class="fas fa-user-graduate"></i>
@@ -25,7 +25,7 @@
         <div class="small-box bg-warning">
             <div class="inner">
                 <h3><?= $total12 ?></h3>
-                <p>Estudiantes de Duodécimo</p>
+                <p>Estudiantes de 12.°</p>
             </div>
             <div class="icon">
                 <i class="fas fa-user-graduate"></i>
