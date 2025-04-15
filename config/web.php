@@ -22,7 +22,9 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => ['site/login'], // Redirigir a esta URL si el usuario no está autenticado
         ],
+
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],

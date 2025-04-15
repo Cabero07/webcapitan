@@ -20,12 +20,17 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::class,
-                'only' => ['logout'],
+                'only' => ['logout', 'dashboard', 'contact', 'profesores'], // Acciones que requieren autenticación
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout', 'dashboard', 'contact', 'profesores'],
                         'allow' => true,
-                        'roles' => ['@'],
+                        'roles' => ['@'], // Solo usuarios autenticados
+                    ],
+                    [
+                        'actions' => ['login', 'error'], // Acciones públicas
+                        'allow' => true,
+                        'roles' => ['?'],
                     ],
                 ],
             ],
