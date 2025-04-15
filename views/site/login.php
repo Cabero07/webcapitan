@@ -1,13 +1,15 @@
 <?php
+
 use yii\helpers\Html;
 ?>
+
 <div class="card">
     <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">Ingrese sus datos</p>
 
         <?php $form = \yii\bootstrap4\ActiveForm::begin(['id' => 'login-form']) ?>
 
-        <?= $form->field($model,'username', [
+        <?= $form->field($model, 'username', [
             'options' => ['class' => 'form-group has-feedback'],
             'inputTemplate' => '{input}<div class="input-group-append"><div class="input-group-text"><span class="fas fa-envelope"></span></div></div>',
             'template' => '{beginWrapper}{input}{error}{endWrapper}',
@@ -26,22 +28,14 @@ use yii\helpers\Html;
             ->passwordInput(['placeholder' => $model->getAttributeLabel('password')]) ?>
 
         <div class="row">
-            <div class="col-8">
-                <?= $form->field($model, 'rememberMe')->checkbox([
-                    'template' => '<div class="icheck-primary">{input}{label}</div>',
-                    'labelOptions' => [
-                        'class' => ''
-                    ],
-                    'uncheck' => null
-                ]) ?>
-            </div>
             <div class="col-4">
-                <?= Html::submitButton('Sign In', ['class' => 'btn btn-primary btn-block']) ?>
+                <?= Html::submitButton('Acceder', ['class' => 'btn btn-primary btn-block']) ?>
             </div>
         </div>
 
         <?php \yii\bootstrap4\ActiveForm::end(); ?>
-
+        <?php
+        /*
         <div class="social-auth-links text-center mb-3">
             <p>- OR -</p>
             <a href="#" class="btn btn-block btn-primary">
@@ -52,13 +46,16 @@ use yii\helpers\Html;
             </a>
         </div>
         <!-- /.social-auth-links -->
-
+         */
+        /*
         <p class="mb-1">
             <a href="forgot-password.html">I forgot my password</a>
         </p>
         <p class="mb-0">
             <a href="register.html" class="text-center">Register a new membership</a>
         </p>
+        </div>
+        */
+        ?>
+        <!-- /.login-card-body -->
     </div>
-    <!-- /.login-card-body -->
-</div>
