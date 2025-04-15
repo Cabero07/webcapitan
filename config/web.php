@@ -20,9 +20,9 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
-            'loginUrl' => ['site/login'], // Redirigir a esta URL si el usuario no está autenticado
+            'identityClass' => 'app\models\User', // Modelo de usuario
+            'enableAutoLogin' => true,           // Habilita el inicio de sesión automático
+            'loginUrl' => ['site/login'],        // URL de inicio de sesión
         ],
 
         'errorHandler' => [
@@ -52,6 +52,18 @@ $config = [
             ],
         ],
         */
+    ],
+    'as access' => [
+        'class' => yii\filters\AccessControl::class,
+        'denyCallback' => function ($rule, $action) {
+            return Yii::$app->response->redirect(['site/login'])->send();
+        },
+        'rules' => [
+            [
+                'allow' => true,
+                'roles' => ['@'], // Solo usuarios autenticados
+            ],
+        ],
     ],
     'params' => $params,
 ];
