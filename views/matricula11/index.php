@@ -52,7 +52,7 @@ $this->title = 'Matrícula Estudiantíl 11no grado';
             //'folio',
             //'numero_matricula',
             //'grado',
-            //'grupo',
+            'grupo',
             //'deficiencias',
             //'activo',
             [

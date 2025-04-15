@@ -35,7 +35,7 @@ $this->title = 'Matrícula Estudiantíl 10mo grado';
             'nombre1ro',
             'nombre2do',
             'telefono',
-            'sexo',
+            //'sexo',
             //'color_piel',
             //'proc_soc_padre',
             //'proc_soc_madre',
@@ -52,7 +52,7 @@ $this->title = 'Matrícula Estudiantíl 10mo grado';
             //'folio',
             //'numero_matricula',
             //'grado',
-            //'grupo',
+            'grupo',
             //'deficiencias',
             //'activo',
             [
