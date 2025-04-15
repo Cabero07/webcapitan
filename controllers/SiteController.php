@@ -66,6 +66,7 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+    
 
     public function actionLogout()
     {
@@ -76,7 +77,17 @@ class SiteController extends Controller
 
     public function actionDashboard()
     {
-        return $this->render('dashboard');
+        $total10 = Yii::$app->db->createCommand('SELECT COUNT(*) FROM tbl_matricula_estudiantil_10grado')->queryScalar();
+        $total11 = Yii::$app->db->createCommand('SELECT COUNT(*) FROM tbl_matricula_estudiantil_11grado')->queryScalar();
+        $total12 = Yii::$app->db->createCommand('SELECT COUNT(*) FROM tbl_matricula_estudiantil_12grado')->queryScalar();
+        $totalProfesores = Yii::$app->db->createCommand('SELECT COUNT(*) FROM tbl_profesores_preuniversitario')->queryScalar();
+
+        return $this->render('dashboard', [
+            'total10' => $total10,
+            'total11' => $total11,
+            'total12' => $total12,
+            'totalProfesores' => $totalProfesores,
+        ]);
     }
 
     public function actionContact()

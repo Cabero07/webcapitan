@@ -1,44 +1,45 @@
-<?php
-$this->title = 'Dashboard Page';
-?>
 <div class="row">
-    <div class="col-4 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-            <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-users"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Trabajadores</span>
-                <span class="info-box-number">2,000</span>
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3><?= $total10 ?></h3>
+                <p>Estudiantes de Décimo</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-user-graduate"></i>
             </div>
         </div>
     </div>
-    <div class="col-4 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-            <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-users"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Estudiantes de 12.°</span>
-                <span class="info-box-number">2,000</span>
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3><?= $total11 ?></h3>
+                <p>Estudiantes de Undécimo</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-user-graduate"></i>
             </div>
         </div>
     </div>
-    <div class="col-4 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-            <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-users"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Estudiantes de 11.°</span>
-                <span class="info-box-number">2,000</span>
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3><?= $total12 ?></h3>
+                <p>Estudiantes de Duodécimo</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-user-graduate"></i>
             </div>
         </div>
     </div>
-    <div class="col-4 col-sm-6 col-md-3">
-        <div class="info-box mb-3">
-            <span class="info-box-icon bg-secondary elevation-1"><i class="fas fa-users"></i></span>
-
-            <div class="info-box-content">
-                <span class="info-box-text">Estudiantes de 10.°</span>
-                <span class="info-box-number">2,000</span>
+    <div class="col-lg-3 col-6">
+        <div class="small-box bg-danger">
+            <div class="inner">
+                <h3><?= $totalProfesores ?></h3>
+                <p>Profesores</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-chalkboard-teacher"></i>
             </div>
         </div>
     </div>
