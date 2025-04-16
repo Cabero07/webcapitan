@@ -35,11 +35,82 @@ $this->params['breadcrumbs'][] = $this->title;
                     'apellido1ro',
                     'apellido2do',
                     'nombre1ro',
-                    'nombre2do',
-                    'telefono',
+                    [
+                        'attribute' => 'nombre2do',
+                        'value' => $model->nombre2do ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'telefono',
+                        'value' => $model->telefono ?? 'N/A',
+                    ],
                     'sexo',
+                    [
+                        'attribute' => 'color_piel',
+                        'value' => $model->color_piel ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'proc_soc_padre',
+                        'value' => $model->proc_soc_padre ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'proc_soc_madre',
+                        'value' => $model->proc_soc_madre ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'calle',
+                        'value' => $model->calle ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'numero',
+                        'value' => $model->numero ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'apartamento',
+                        'value' => $model->apartamento ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'piso',
+                        'value' => $model->piso ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'entre_calle',
+                        'value' => $model->entre_calle ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'y_calle',
+                        'value' => $model->y_calle ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'barrio',
+                        'value' => $model->barrio ?? 'N/A',
+                    ],
+                    'municipio',
+                    [
+                        'attribute' => 'consejo_popular',
+                        'value' => $model->consejo_popular ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'tomo',
+                        'value' => $model->tomo ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'folio',
+                        'value' => $model->folio ?? 'N/A',
+                    ],
+                    'numero_matricula',
                     'grado',
-                    'grupo',
+                    [
+                        'attribute' => 'grupo',
+                        'value' => $model->grupo ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'deficiencias',
+                        'value' => $model->deficiencias ?? 'N/A',
+                    ],
+                    [
+                        'attribute' => 'activo',
+                        'value' => $model->activo ? 'Sí' : 'No',
+                    ],
                 ],
             ]) ?>
         </div>
