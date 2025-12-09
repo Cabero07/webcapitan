@@ -2,129 +2,128 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\helpers\ArrayHelper;
+use app\models\TblProfesoresPreuniversitario;
 
 /** @var yii\web\View $this */
 /** @var app\models\TblProfesoresPreuniversitario $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
 
-<div class="tbl-profesores-preuniversitario-form container mt-5">
+<?php
+// Asegurar asignaturas disponibles: si la BD está vacía, ofrecer opciones predeterminadas
+$asignaturas = ArrayHelper::map(
+    TblProfesoresPreuniversitario::find()->select('asignatura')->distinct()->where(['not', ['asignatura' => null]])->orderBy('asignatura ASC')->all(),
+    'asignatura',
+    'asignatura'
+);
+if (count($asignaturas) === 0) {
+    $asignaturas = [
+        'Matemática' => 'Matemática',
+        'Física' => 'Física',
+        'Química' => 'Química',
+        'Historia' => 'Historia',
+        'Lengua Española' => 'Lengua Española'
+    ];
+}
+?>
 
-    <?php $form = ActiveForm::begin([
-        'options' => ['class' => 'needs-validation', 'novalidate' => true], // Bootstrap validation classes
-    ]); ?>
-
-    <div class="card shadow">
-        <div class="card-header bg-primary text-white">
-            <h4 class="mb-0"><i class="fas fa-user-plus"></i> Registrar un Nuevo Profesor</h4>
-        </div>
-        <div class="card-body">
-
-            <!-- Sección: Información Personal -->
-            <fieldset>
-                <legend class="text-primary"><i class="fas fa-id-badge"></i> Información Personal</legend>
-                <div class="row">
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'ci')->textInput([
-                            'maxlength' => true,
-                            'placeholder' => 'Ingrese el CI del profesor',
-                            'class' => 'form-control',
-                        ])->label('<i class="fas fa-id-card text-muted"></i> CI <span class="text-danger">*</span>', ['class' => 'form-label']) ?>
-                    </div>
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'apellido1ro')->textInput([
-                            'maxlength' => true,
-                            'placeholder' => 'Ingrese el primer apellido',
-                            'class' => 'form-control',
-                        ])->label('<i class="fas fa-user text-muted"></i> Primer Apellido <span class="text-danger">*</span>', ['class' => 'form-label']) ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'apellido2do')->textInput([
-                            'maxlength' => true,
-                            'placeholder' => 'Ingrese el segundo apellido',
-                            'class' => 'form-control',
-                        ])->label('<i class="fas fa-user text-muted"></i> Segundo Apellido <span class="text-danger">*</span>', ['class' => 'form-label']) ?>
-                    </div>
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'nombre1ro')->textInput([
-                            'maxlength' => true,
-                            'placeholder' => 'Ingrese el primer nombre',
-                            'class' => 'form-control',
-                        ])->label('<i class="fas fa-user text-muted"></i> Primer Nombre <span class="text-danger">*</span>', ['class' => 'form-label']) ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'nombre2do')->textInput([
-                            'maxlength' => true,
-                            'placeholder' => 'Ingrese el segundo nombre',
-                            'class' => 'form-control',
-                        ])->label('<i class="fas fa-user text-muted"></i> Segundo Nombre', ['class' => 'form-label']) ?>
-                    </div>
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'sexo')->dropDownList([
-                            'Masculino' => 'Masculino',
-                            'Femenino' => 'Femenino',
-                        ], [
-                            'prompt' => 'Seleccione el género',
-                            'class' => 'form-select',
-                        ])->label('<i class="fas fa-venus-mars text-muted"></i> Género <span class="text-danger">*</span>', ['class' => 'form-label']) ?>
-                    </div>
-                </div>
-            </fieldset>
-
-            <!-- Sección: Contacto -->
-            <fieldset class="mt-4">
-                <legend class="text-primary"><i class="fas fa-phone-alt"></i> Contacto</legend>
-                <div class="row">
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'telefono')->textInput([
-                            'maxlength' => true,
-                            'placeholder' => 'Ingrese el número de teléfono',
-                            'class' => 'form-control',
-                        ])->label('<i class="fas fa-phone text-muted"></i> Teléfono', ['class' => 'form-label']) ?>
-                    </div>
-                </div>
-            </fieldset>
-
-            <!-- Sección: Dirección -->
-            <fieldset class="mt-4">
-                <legend class="text-primary"><i class="fas fa-map-marker-alt"></i> Dirección</legend>
-                <div class="row">
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'calle')->textInput([
-                            'maxlength' => true,
-                            'placeholder' => 'Ingrese la calle',
-                            'class' => 'form-control',
-                        ])->label('<i class="fas fa-road text-muted"></i> Calle', ['class' => 'form-label']) ?>
-                    </div>
-                    <div class="col-md-6">
-                        <?= $form->field($model, 'numero')->textInput([
-                            'maxlength' => true,
-                            'placeholder' => 'Número de la casa',
-                            'class' => 'form-control',
-                        ])->label('<i class="fas fa-hashtag text-muted"></i> Número', ['class' => 'form-label']) ?>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <?= $form->field($model, 'barrio')->textInput([
-                            'maxlength' => true,
-                            'placeholder' => 'Ingrese el barrio',
-                            'class' => 'form-control',
-                        ])->label('<i class="fas fa-warehouse text-muted"></i> Barrio', ['class' => 'form-label']) ?>
-                    </div>
-                </div>
-            </fieldset>
-
-        </div>
-        <div class="card-footer text-center">
-            <?= Html::submitButton('<i class="fas fa-save"></i> Registrar Profesor', ['class' => 'btn btn-primary btn-lg']) ?>
-        </div>
+<?php $form = ActiveForm::begin([
+    'options' => ['autocomplete'=>'off'],
+]); ?>
+<div class="row">
+    <div class="col-md-6">
+        <!-- CI -->
+        <?= $form->field($model, 'ci')->textInput([
+            'maxlength' => true,
+            'placeholder' => 'CI del profesor',
+        ]) ?>
     </div>
-
-    <?php ActiveForm::end(); ?>
-
+    <div class="col-md-6">
+        <!-- Género -->
+        <?= $form->field($model, 'sexo')->dropDownList([
+            'Masculino' => 'Masculino',
+            'Femenino' => 'Femenino'
+        ], ['prompt'=>'Seleccione']) ?>
+    </div>
 </div>
+<div class="row">
+    <div class="col-md-6">
+        <?= $form->field($model, 'apellido1ro')->textInput([
+            'maxlength' => true,
+            'placeholder' => 'Primer apellido',
+        ]) ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'apellido2do')->textInput([
+            'maxlength' => true,
+            'placeholder' => 'Segundo apellido',
+        ]) ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <?= $form->field($model, 'nombre1ro')->textInput([
+            'maxlength' => true,
+            'placeholder' => 'Primer nombre',
+        ]) ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'nombre2do')->textInput([
+            'maxlength' => true,
+            'placeholder' => 'Segundo nombre (opcional)',
+        ]) ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <?= $form->field($model, 'telefono')->textInput([
+            'maxlength' => true,
+            'placeholder' => 'Número de teléfono',
+        ]) ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'asignatura')->dropDownList(
+            $asignaturas,
+            ['prompt' => 'Seleccione la asignatura']
+        ) ?>
+    </div>
+</div>
+<!-- Dirección -->
+<div class="row">
+    <div class="col-md-6">
+        <?= $form->field($model, 'calle')->textInput(['maxlength'=>true,'placeholder'=>'Calle']) ?>
+    </div>
+    <div class="col-md-2">
+        <?= $form->field($model, 'numero')->textInput(['maxlength'=>true,'placeholder'=>'Número']) ?>
+    </div>
+    <div class="col-md-4">
+        <?= $form->field($model, 'barrio')->textInput(['maxlength'=>true,'placeholder'=>'Barrio']) ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <?= $form->field($model, 'apartamento')->textInput(['maxlength'=>true,'placeholder'=>'Apartamento']) ?>
+    </div>
+    <div class="col-md-4">
+        <?= $form->field($model, 'piso')->textInput(['maxlength'=>true,'placeholder'=>'Piso']) ?>
+    </div>
+    <div class="col-md-4">
+        <?= $form->field($model, 'telefono')->textInput(['maxlength'=>true,'placeholder'=>'Teléfono']) ?>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <?= $form->field($model, 'entre_calle')->textInput(['maxlength'=>true,'placeholder'=>'Entre calle']) ?>
+    </div>
+    <div class="col-md-6">
+        <?= $form->field($model, 'y_calle')->textInput(['maxlength'=>true,'placeholder'=>'Y calle']) ?>
+    </div>
+</div>
+<div class="mt-4">
+    <?= Html::submitButton(
+        $model->isNewRecord ? '<i class="fas fa-save"></i> Crear profesor' : '<i class="fas fa-save"></i> Guardar cambios',
+        ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']
+    ) ?>
+</div>
+<?php ActiveForm::end(); ?>

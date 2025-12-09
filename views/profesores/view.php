@@ -12,15 +12,15 @@ $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="container mt-4">
-    <div class="card shadow">
+    <div class="card">
         <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
             <h4 class="mb-0"><i class="fas fa-user"></i> <?= Html::encode($this->title) ?></h4>
             <div>
-                <?= Html::a('<i class="fas fa-edit"></i> Actualizar', ['update', 'id' => $model->id], ['class' => 'btn btn-warning']) ?>
+                <?= Html::a('<i class="fas fa-edit"></i> Editar', ['update', 'id' => $model->id], ['class' => 'btn btn-warning']) ?>
                 <?= Html::a('<i class="fas fa-trash"></i> Eliminar', ['delete', 'id' => $model->id], [
                     'class' => 'btn btn-danger',
                     'data' => [
-                        'confirm' => '¿Estás seguro de que deseas eliminar este profesor?',
+                        'confirm' => '¿Está seguro de eliminar este profesor?',
                         'method' => 'post',
                     ],
                 ]) ?>
@@ -34,34 +34,40 @@ $this->params['breadcrumbs'][] = $this->title;
                     [
                         'label' => 'CI',
                         'value' => $model->ci,
+                        'visible' => !empty($model->ci),
                     ],
                     [
                         'label' => 'Nombre Completo',
-                        'value' => $model->nombre1ro . ' ' . $model->nombre2do . ' ' . $model->apellido1ro . ' ' . $model->apellido2do,
+                        'value' => trim($model->nombre1ro . ' ' . ($model->nombre2do ?? '') . ' ' . $model->apellido1ro . ' ' . $model->apellido2do),
+                        'visible' => true,
                     ],
                     [
                         'label' => 'Teléfono',
                         'value' => $model->telefono,
+                        'visible' => !empty($model->telefono),
                     ],
                     [
                         'label' => 'Género',
                         'value' => $model->sexo,
+                        'visible' => !empty($model->sexo),
                     ],
                     [
                         'label' => 'Asignatura',
                         'value' => $model->asignatura,
+                        'visible' => !empty($model->asignatura),
                     ],
                     [
                         'label' => 'Dirección',
-                        'value' => $model->calle . ' #' . $model->numero . ', Apartamento: ' . $model->apartamento . ', Piso: ' . $model->piso . ', Barrio: ' . $model->barrio,
+                        'value' => trim(($model->calle ?? '') . ' #' . ($model->numero ?? '') . ($model->apartamento ? ', Apt: ' . $model->apartamento : '') . ($model->piso ? ', Piso: ' . $model->piso : '') . ($model->barrio ? ', Barrio: ' . $model->barrio : '')),
+                        'visible' => ($model->calle || $model->numero || $model->apartamento || $model->piso || $model->barrio),
                     ],
                     [
                         'label' => 'Entre Calles',
-                        'value' => $model->entre_calle . ' y ' . $model->y_calle,
+                        'value' => ($model->entre_calle && $model->y_calle) ? ($model->entre_calle . ' y ' . $model->y_calle) : null,
+                        'visible' => ($model->entre_calle && $model->y_calle),
                     ],
                 ],
             ]) ?>
         </div>
-
     </div>
 </div>
