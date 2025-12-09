@@ -25,28 +25,19 @@ $this->registerJsFile($publishedRes[1].'/control_sidebar.js', ['depends' => '\ha
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="hold-transition sidebar-mini">
+
+<body class="hold-transition sidebar-mini bg-light">
 <?php $this->beginBody() ?>
-
 <div class="wrapper">
-    <!-- Navbar -->
     <?= $this->render('navbar', ['assetDir' => $assetDir]) ?>
-    <!-- /.navbar -->
-
-    <!-- Main Sidebar Container -->
     <?= $this->render('sidebar', ['assetDir' => $assetDir]) ?>
-
-    <!-- Content Wrapper. Contains page content -->
-    <?= $this->render('content', ['content' => $content, 'assetDir' => $assetDir]) ?>
-    <!-- /.content-wrapper -->
-
-    <!-- Control Sidebar -->
+    <div class="container-fluid py-4">
+        <?= $this->render('content', ['content' => $content, 'assetDir' => $assetDir]) ?>
+    </div>
     <?= $this->render('control-sidebar') ?>
-    <!-- /.control-sidebar -->
-
-    <!-- Main Footer -->
     <?= $this->render('footer') ?>
 </div>
+
 
 <?php $this->endBody() ?>
 </body>
