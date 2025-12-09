@@ -1,3 +1,8 @@
+<?php
+
+use yii\helpers\Html;
+
+?>
 <nav class="main-header navbar navbar-expand navbar-dark bg-primary shadow-sm rounded">
     <ul class="navbar-nav">
         <li class="nav-item">
