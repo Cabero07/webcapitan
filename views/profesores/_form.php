@@ -23,7 +23,8 @@ if (count($asignaturas) === 0) {
         'Física' => 'Física',
         'Química' => 'Química',
         'Historia' => 'Historia',
-        'Lengua Española' => 'Lengua Española'
+        'Lengua Española' => 'Lengua Española',
+        'Informática' => 'Informática'
     ];
 }
 ?>
