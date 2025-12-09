@@ -69,7 +69,7 @@ use yii\widgets\ActiveForm;
                 <div class="col-md-2"><?= $form->field($model, 'tomo')->textInput(['maxlength'=>10]) ?></div>
                 <div class="col-md-2"><?= $form->field($model, 'folio')->textInput(['maxlength'=>10]) ?></div>
                 <div class="col-md-3"><?= $form->field($model, 'numero_matricula')->textInput(['maxlength'=>20]) ?></div>
-                <div class="col-md-2"><?= $form->field($model, 'grado')->textInput(['maxlength'=>20,'value'=>'12']) // puedes forzar el valor si aplica ?></div>
+                <div class="col-md-2"><?= $form->field($model, 'grado')->textInput(['maxlength'=>20,'value'=>'12'])?></div>
                 <div class="col-md-3"><?= $form->field($model, 'grupo')->textInput(['maxlength'=>10]) ?></div>
             </div>
             <div class="row">
