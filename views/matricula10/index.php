@@ -51,7 +51,7 @@ $this->title = 'Matrícula Estudiantíl - 10mo Grado';
                                     ],
                                 ]),
                         ],
-                        'urlCreator' => fn($action, TblMatriculaEstudiantil12grado $model, $key, $index, $column) =>
+                        'urlCreator' => fn($action, TblMatriculaEstudiantil10grado $model, $key, $index, $column) =>
                             Url::toRoute([$action, 'id' => $model->id]),
                     ],
                 ],
