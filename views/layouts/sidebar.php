@@ -1,3 +1,9 @@
+<?php
+
+use yii\helpers\Url;
+
+?>
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="<?= Url::home() ?>" class="brand-link text-center bg-primary">
         <span class="brand-text font-weight-bold text-white" style="letter-spacing:1.5px;">
